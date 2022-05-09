@@ -34,12 +34,14 @@ console.log(CpuNumber);
 
 let userBombs = [];
 let isGameOver = false;
+let i = 1;
 
-for (let i = 0; i < 84; i++) {
+while (isGameOver = true || i < 84) {
     const userChoose = Number(prompt("Inserisci un numero tra 1 e 100"));
     if (userChoose < 1 || userChoose > 100 || isNaN(userChoose) == true) {
         Number(prompt("Inserisci un numero tra 1 e 100"));
     } else if (CpuNumber.includes(userChoose)) {
+        isGameOver = true;
         alert("Hai vinto!");
     } else if (userBombs.includes(userChoose)) {
         alert("Numero già utilizzato, inseriscine un altro!")
