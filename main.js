@@ -31,6 +31,21 @@ console.log(CpuNumber);
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 
 
+let userBombs = [];
+
+for (let i = 0; i < 84; i++) {
+    const userChoose = Number(prompt("Inserisci un numero tra 1 e 100"));
+    if (userChoose < 1 || userChoose > 100 || isNaN(userChoose) == true) {
+        Number(prompt("Inserisci un numero tra 1 e 100"));
+    } else if (CpuNumber.includes(userChoose)) {
+        alert("Hai vinto!");
+    } else if (userBombs.includes(userChoose)) {
+        alert("Numero già utilizzato, inseriscine un altro!")
+    } else {
+        userBombs.push(userChoose);
+    }
+}
+
 // L’utente non può inserire più volte lo stesso numero.
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
 // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
