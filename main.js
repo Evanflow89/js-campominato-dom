@@ -12,10 +12,16 @@ function randomNumber(min, max) {
 
 
 let CpuNumber = [];
+const cpuChoose = randomNumber(1, 100);
+
 
 while (CpuNumber.length < 16) {
     const cpuChoose = randomNumber(1, 100);
-    CpuNumber.push(cpuChoose);
+    if (CpuNumber.includes(cpuChoose)) {
+        randomNumber(1, 100);
+    } else {
+        CpuNumber.push(cpuChoose);
+    }
 }
 
 console.log(CpuNumber);
@@ -23,6 +29,8 @@ console.log(CpuNumber);
 
 
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
+
+
 // L’utente non può inserire più volte lo stesso numero.
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
 // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
