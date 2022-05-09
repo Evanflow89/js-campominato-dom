@@ -35,7 +35,7 @@ let userBombs = [];
 let isGameOver = false;
 let i = 1;
 
-while (i < 84 || isGameOver === true) {
+while (i < 10 || isGameOver === true) {
     const userChoose = Number(prompt("Inserisci un numero tra 1 e 100"));
     if (userChoose < 1 || userChoose > 100 || isNaN(userChoose) == true) {
         Number(prompt("Inserisci un numero tra 1 e 100"));
@@ -46,9 +46,8 @@ while (i < 84 || isGameOver === true) {
         isGameOver = true;
     } else {
         userBombs.push(userChoose);
-    }
-} i++;
-
+    } i++;
+}
 
 
 // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
