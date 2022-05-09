@@ -12,7 +12,6 @@ function randomNumber(min, max) {
 
 
 let CpuNumber = [];
-const cpuChoose = randomNumber(1, 100);
 
 
 while (CpuNumber.length < 16) {
@@ -36,19 +35,19 @@ let userBombs = [];
 let isGameOver = false;
 let i = 1;
 
-while (isGameOver = true || i < 84) {
+while (i < 84 || isGameOver === true) {
     const userChoose = Number(prompt("Inserisci un numero tra 1 e 100"));
     if (userChoose < 1 || userChoose > 100 || isNaN(userChoose) == true) {
         Number(prompt("Inserisci un numero tra 1 e 100"));
-    } else if (CpuNumber.includes(userChoose)) {
-        isGameOver = true;
-        alert("Hai vinto!");
     } else if (userBombs.includes(userChoose)) {
         alert("Numero già utilizzato, inseriscine un altro!")
+    } else if (CpuNumber.includes(userChoose)) {
+        alert("Hai vinto!");
+        isGameOver = true;
     } else {
         userBombs.push(userChoose);
     }
-}
+} i++;
 
 
 
