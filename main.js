@@ -31,23 +31,23 @@ console.log(CpuNumber);
 // L’utente non può inserire più volte lo stesso numero.
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
 
-let userBombs = [];
-let isGameOver = false;
-let i = 1;
+let attempts = [];
+let bombExploded = false;
 
-while (i < 10 || isGameOver === true) {
-    const userChoose = Number(prompt("Inserisci un numero tra 1 e 100"));
-    if (userChoose < 1 || userChoose > 100 || isNaN(userChoose) == true) {
-        Number(prompt("Inserisci un numero tra 1 e 100"));
-    } else if (userBombs.includes(userChoose)) {
-        alert("Numero già utilizzato, inseriscine un altro!")
-    } else if (CpuNumber.includes(userChoose)) {
-        alert("Hai vinto!");
-        isGameOver = true;
+// (userChoose < 1 || userChoose > 100 || isNaN(userChoose) == true) {
+//     Number(prompt("Inserisci un numero tra 1 e 100"));
+
+while (attempts.length < 10 && bombExploded === false) {
+    const userNumber = Number(prompt("Inserisci un numero tra 1 e 100"))
+    if (CpuNumber.includes(userNumber)) {
+        bombExploded = true;
+    } else if (attempts.includes(userNumber)) {
+        alert("Il numero è già stato inserito!")
+
     } else {
-        userBombs.push(userChoose);
-    } i++;
-}
+        attempts.push(userNumber);
+    }
+} console.log("Il gioco è terminato!")
 
 
 // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
