@@ -10,20 +10,38 @@ function randomNumber(min, max) {
 // per far questo devo avere un array vuoto da popolare
 // I numeri non possono essere duplicati.
 
-
+const difficultLevel = Number(prompt("Scegli il livello di difficoltà tra 0, 1 e 2"));
+let difficult;
 let CpuNumber = [];
+
+if (difficultLevel === 0) {
+    difficult = 100
+} else if (difficultLevel === 1) {
+    difficult = 80;
+} else if (difficultLevel === 2) {
+    difficult = 50;
+}
+
 
 
 while (CpuNumber.length < 16) {
-    const cpuChoose = randomNumber(1, 100);
+    const cpuChoose = randomNumber(1, difficult);
     if (CpuNumber.includes(cpuChoose)) {
-        randomNumber(1, 100);
+        randomNumber(1, difficult);
     } else {
         CpuNumber.push(cpuChoose);
     }
 }
 
 console.log(CpuNumber);
+
+
+
+
+
+
+
+
 
 
 
@@ -37,7 +55,7 @@ let bombExploded = false;
 // (userChoose < 1 || userChoose > 100 || isNaN(userChoose) == true) {
 //     Number(prompt("Inserisci un numero tra 1 e 100"));
 
-while (attempts.length < 10 && bombExploded === false) {
+while (attempts.length < 84 && bombExploded === false) {
     const userNumber = Number(prompt("Inserisci un numero tra 1 e 100"))
     if (CpuNumber.includes(userNumber)) {
         bombExploded = true;
