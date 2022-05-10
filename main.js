@@ -19,6 +19,7 @@ const difficultLevel = Number(prompt("Scegli il livello di difficoltà tra 0, 1 
 let difficult;
 let CpuNumber = [];
 
+
 if (difficultLevel === 0) {
     difficult = 100
 } else if (difficultLevel === 1) {
@@ -32,15 +33,16 @@ for (let i = 1; i <= difficult; i++) {
     element.classList.add("item");
     element.innerHTML += i;
     items.append(element);
-} if (CpuNumber.includes(i)) {
     element.addEventListener("click", function () {
-        element.classList.add("redCheck");
-    });
-} else {
-    element.addEventListener("click", function () {
-        element.classList.add("greenCheck");
+        if (CpuNumber.includes(i)) {
+            element.classList.add("redCheck");
+        } else {
+            element.classList.add("greenCheck");
+        }
     });
 }
+
+
 
 
 
@@ -55,29 +57,29 @@ while (CpuNumber.length < 16) {
 
 console.log(CpuNumber);
 
-// In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
-// L’utente non può inserire più volte lo stesso numero.
-// Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
+        // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
+        // L’utente non può inserire più volte lo stesso numero.
+        // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
 
-let attempts = [];
-let bombExploded = false;
-
-
-while (attempts.length < 10 && bombExploded === false) {
-    const userNumber = Number(prompt("Inserisci un numero tra 1 e 100"))
-    if (CpuNumber.includes(userNumber)) {
-        bombExploded = true;
-    } else if (attempts.includes(userNumber)) {
-        alert("Il numero è già stato inserito!")
-    } else {
-        attempts.push(userNumber);
-    }
-} console.log("Il gioco è terminato!")
+        // let attempts = [];
+        // let bombExploded = false;
 
 
-if (bombExploded) {
-    alert(`Hai perso! Il tuo punteggio è ${attempts.length}`);
-} else {
-    alert("Hai vinto!")
-}
+        // while (attempts.length < 10 && bombExploded === false) {
+        //     const userNumber = Number(prompt("Inserisci un numero tra 1 e 100"))
+        //     if (CpuNumber.includes(userNumber)) {
+        //         bombExploded = true;
+        //     } else if (attempts.includes(userNumber)) {
+        //         alert("Il numero è già stato inserito!")
+        //     } else {
+        //         attempts.push(userNumber);
+        //     }
+        // } console.log("Il gioco è terminato!")
+
+
+        // if (bombExploded) {
+        //     alert(`Hai perso! Il tuo punteggio è ${attempts.length}`);
+        // } else {
+        //     alert("Hai vinto!")
+        // }
 
