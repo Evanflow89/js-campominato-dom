@@ -6,6 +6,11 @@ function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+// Elementi Html
+
+const container = document.querySelector(".container");
+const items = document.querySelector(".items");
+
 // creo un ciclo in cui utilizzo la funzione per 16 volte in modo da avere dei numeri casuali e senza doppioni
 // per far questo devo avere un array vuoto da popolare
 // I numeri non possono essere duplicati.
@@ -22,6 +27,13 @@ if (difficultLevel === 0) {
     difficult = 50;
 }
 
+for (let i = 1; i <= difficult; i++) {
+    const element = document.createElement("div");
+    element.classList.add("item");
+    element.innerHTML += i;
+    items.append(element);
+}
+
 
 
 while (CpuNumber.length < 16) {
@@ -35,16 +47,6 @@ while (CpuNumber.length < 16) {
 
 console.log(CpuNumber);
 
-
-
-
-
-
-
-
-
-
-
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // L’utente non può inserire più volte lo stesso numero.
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
@@ -52,8 +54,6 @@ console.log(CpuNumber);
 let attempts = [];
 let bombExploded = false;
 
-// (userChoose < 1 || userChoose > 100 || isNaN(userChoose) == true) {
-//     Number(prompt("Inserisci un numero tra 1 e 100"));
 
 while (attempts.length < 10 && bombExploded === false) {
     const userNumber = Number(prompt("Inserisci un numero tra 1 e 100"))
@@ -73,11 +73,3 @@ if (bombExploded) {
     alert("Hai vinto!")
 }
 
-
-// La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
-// Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
-// BONUS: (da fare solo se funziona tutto il resto)
-// all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
-// con difficoltà 0 => tra 1 e 100
-// con difficoltà 1 => tra 1 e 80
-// con difficoltà 2 => tra 1 e 50
