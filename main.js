@@ -68,6 +68,13 @@ while (attempts.length < 84 && bombExploded === false) {
 } console.log("Il gioco è terminato!")
 
 
+if (bombExploded) {
+    alert(`Hai perso! Il tuo punteggio è ${attempts.lenght}`);
+} else {
+    alert("Hai vinto!")
+}
+
+
 // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 // BONUS: (da fare solo se funziona tutto il resto)
