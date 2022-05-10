@@ -32,6 +32,14 @@ for (let i = 1; i <= difficult; i++) {
     element.classList.add("item");
     element.innerHTML += i;
     items.append(element);
+} if (CpuNumber.includes(i)) {
+    element.addEventListener("click", function () {
+        element.classList.add("redCheck");
+    });
+} else {
+    element.addEventListener("click", function () {
+        element.classList.add("greenCheck");
+    });
 }
 
 

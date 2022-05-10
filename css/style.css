@@ -37,3 +37,11 @@ body {
     text-align: center;
     line-height: 100px;
 }
+
+.greenCheck {
+    background-color: green;
+}
+
+.redCheck {
+    background-color: green;
+}
