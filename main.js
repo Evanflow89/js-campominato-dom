@@ -55,13 +55,12 @@ let bombExploded = false;
 // (userChoose < 1 || userChoose > 100 || isNaN(userChoose) == true) {
 //     Number(prompt("Inserisci un numero tra 1 e 100"));
 
-while (attempts.length < 84 && bombExploded === false) {
+while (attempts.length < 10 && bombExploded === false) {
     const userNumber = Number(prompt("Inserisci un numero tra 1 e 100"))
     if (CpuNumber.includes(userNumber)) {
         bombExploded = true;
     } else if (attempts.includes(userNumber)) {
         alert("Il numero è già stato inserito!")
-
     } else {
         attempts.push(userNumber);
     }
@@ -69,7 +68,7 @@ while (attempts.length < 84 && bombExploded === false) {
 
 
 if (bombExploded) {
-    alert(`Hai perso! Il tuo punteggio è ${attempts.lenght}`);
+    alert(`Hai perso! Il tuo punteggio è ${attempts.length}`);
 } else {
     alert("Hai vinto!")
 }
