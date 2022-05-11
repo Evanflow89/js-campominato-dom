@@ -15,6 +15,9 @@
 body {
     background-color: lightblue;
     color: black;
+    background-image: url(../img/duncan-kidd-Cju-BkSkM1k-unsplash.jpg);
+    background-size: cover;
+    color: white;
 }
 
 .container {
@@ -37,7 +40,7 @@ body {
 .item {
     width: 60px;
     height: 60px;
-    border: 2px solid black;
+    border: 2px solid white;
     text-align: center;
     line-height: 60px;
 }
@@ -57,7 +60,7 @@ h1 {
 }
 
 h2 {
-    padding-top: 40px;
+    margin-top: 40px;
     text-align: center;
     text-transform: uppercase;
 }
