@@ -10,6 +10,7 @@ function randomNumber(min, max) {
 
 const container = document.querySelector(".container");
 const items = document.querySelector(".items");
+const lose = document.getElementById("Lose");
 
 // creo un ciclo in cui utilizzo la funzione per 16 volte in modo da avere dei numeri casuali e senza doppioni
 // per far questo devo avere un array vuoto da popolare
@@ -42,8 +43,7 @@ for (let i = 1; i <= difficult; i++) {
         if (CpuNumber.includes(i)) {
             element.classList.add("redCheck");
             bombExploded = true;
-            alert("Hai perso, la partita è terminata");
-            alert(`Hai totalizzato ${attempts} punti`);
+            lose.innerHTML += `Hai perso! Hai totalizzato ${attempts} punti`
         } else {
             element.classList.add("greenCheck");
             attempts += 1;
