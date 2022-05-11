@@ -18,6 +18,8 @@ const items = document.querySelector(".items");
 const difficultLevel = Number(prompt("Scegli il livello di difficoltà tra 0, 1 e 2"));
 let difficult;
 let CpuNumber = [];
+let attempts = 0;
+let bombExploded = false;
 
 
 if (difficultLevel === 0) {
@@ -28,6 +30,9 @@ if (difficultLevel === 0) {
     difficult = 50;
 }
 
+
+
+
 for (let i = 1; i <= difficult; i++) {
     const element = document.createElement("div");
     element.classList.add("item");
@@ -36,11 +41,18 @@ for (let i = 1; i <= difficult; i++) {
     element.addEventListener("click", function () {
         if (CpuNumber.includes(i)) {
             element.classList.add("redCheck");
+            bombExploded = true;
+            alert("Hai perso, la partita è terminata");
+            alert(`Hai totalizzato ${attempts} punti`);
         } else {
             element.classList.add("greenCheck");
+            attempts += 1;
         }
     });
 }
+
+
+
 
 
 
@@ -61,8 +73,7 @@ console.log(CpuNumber);
         // L’utente non può inserire più volte lo stesso numero.
         // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
 
-        // let attempts = [];
-        // let bombExploded = false;
+        // 
 
 
         // while (attempts.length < 10 && bombExploded === false) {
